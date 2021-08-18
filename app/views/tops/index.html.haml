@@ -1,0 +1,41 @@
+%h1.topHeader.text-center.pt-3.mx-auto.mt-2.pb-3.shadow-sm.bg-light 案件・エンジニアマッピング
+%div.d-flex.justify-content-center.bg-white.row
+  %p.col-1.text-center.align-middle.mt-1.mb-1.border.border-litght 一覧
+  %p.col-1.text-center.align-middle.mt-1.mb-1.border.border-litght Java
+  %p.col-1.text-center.align-middle.mt-1.mb-1.border.border-litght C#
+  %p.col-1.text-center.align-middle.mt-1.mb-1.border.border-litght Ruby
+  %p.col-1.text-center.align-middle.mt-1.mb-1.border.border-litght Python
+%div.card-contents.mx-auto
+  %div.row.mt-3.mx-auto.d-flex.justify-content-between
+    - 33.times do
+      %div.card.bg-light.mb-3
+        %div.text-center.position-relative.pt-2
+          %img{:alt => "ユーザーアイコン", :src => "/assets/user.png", :class => 'top_icon'}
+          %p.name.mt-2.mb-2　テスト太郎
+          %p.ranp.position-absolute
+        %div.card-body
+          %div.d-flex
+            %p.mb-0.col-4 言語 :
+            %p.mb-0.col-8.text-end Ruby
+          %div.d-flex
+            %p.mb-0.col-3 OS:
+            %p.mb-0.col-9.text-end linux, ubuntu
+          %div.d-flex
+            %p.mb-0.col-5 その他:
+            %p.mb-0.col-7.text-end AWS
+    %div.card.bg-light.mb-3
+      %div.text-center.position-relative.pt-2
+        %img{:alt => "ユーザーアイコン", :src => "/assets/user.png", :class => 'top_icon'}
+        %p.name.mt-2.mb-2　テスト太郎
+        %p.ranp.position-absolute
+      %div.card-body
+        %div.d-flex
+          %p.mb-0 最後の行は動的に左寄せになるようにする
+        %div.d-flex
+          %p.mb-0.col-3 OS:
+          %p.mb-0.col-9.text-end linux, ubuntu
+        %div.d-flex
+          %p.mb-0.col-5 その他:
+          %p.mb-0.col-7.text-end AWS
+%div.pagenation.text-center
+  %p ページネーションを設定する
