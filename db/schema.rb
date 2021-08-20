@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_133102) do
+ActiveRecord::Schema.define(version: 2021_08_19_005535) do
 
-  create_table "engineers", primary_key: "code", id: :integer, charset: "utf8mb4", force: :cascade do |t|
+  create_table "engineer_skils", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "engineer_id", null: false
+    t.bigint "skil_id", null: false
+    t.integer "status", null: false
+    t.integer "term"
+    t.text "note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["engineer_id"], name: "index_engineer_skils_on_engineer_id"
+    t.index ["skil_id"], name: "index_engineer_skils_on_skil_id"
+  end
+
+  create_table "engineers", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "employee_code", null: false
     t.string "first_name", null: false
     t.string "given_name", null: false
     t.string "first_name_yomi", null: false
@@ -23,9 +36,20 @@ ActiveRecord::Schema.define(version: 2021_08_18_133102) do
     t.string "company_mail", null: false
     t.string "gmail"
     t.string "phone_number"
+    t.integer "operation_flag"
     t.integer "permission_level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "skils", charset: "utf8mb4", force: :cascade do |t|
+    t.string "skil", null: false
+    t.integer "type", null: false
+    t.boolean "delete_flag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "engineer_skils", "engineers"
+  add_foreign_key "engineer_skils", "skils"
 end

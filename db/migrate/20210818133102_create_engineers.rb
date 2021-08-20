@@ -1,7 +1,7 @@
 class CreateEngineers < ActiveRecord::Migration[6.1]
   def change
-    create_table :engineers, id: false do |t|
-      t.integer :code, null: false, unique: true, primary_key: true
+    create_table :engineers do |t|
+      t.integer :employee_code, null: false, unique: true
       t.string :first_name, null: false
       t.string :given_name, null: false
       t.string :first_name_yomi, null: false
@@ -14,6 +14,7 @@ class CreateEngineers < ActiveRecord::Migration[6.1]
       t.string :phone_number, unique: true
       # t.string :password_digest, null: false
       # t.string :remember_token
+      t.integer :operation_flag
       t.integer :permission_level
       t.timestamps
     end
