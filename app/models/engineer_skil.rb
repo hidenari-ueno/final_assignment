@@ -1,0 +1,2 @@
+class EngineerSkil < ApplicationRecord
+end
